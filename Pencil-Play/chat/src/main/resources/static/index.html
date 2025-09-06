@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOLLYWOOD</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        /* Add basic styles for layout */
+        .chat-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .chat-section {
+            flex: 3;
+        }
+
+        #leaderboard-section {
+            flex: 1;
+            border-left: 2px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        #leaderboard-section h3 {
+            margin-top: 0;
+        }
+
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .leaderboard-list li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h3{
+            padding-left: 70px;
+            padding-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="username-page">
+        <div class="username-page-container">
+            <h1 class="title">Type your name to enter the Game</h1>
+            <form id="usernameForm" name="usernameForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="accent username-submit">Start Playing!!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="chat-page" class="hidden">
+        <div class="chat-container">
+
+            <!-- Leaderboard Section -->
+            <div id="leaderboard-section">
+                <h2 style="text-align: center;">Score Card</h2>
+                <ul id="leaderboard" class="leaderboard-list"></ul>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h2>
+                        <span class="left"><b>BOLLYWOOD</b></span>
+                        <span class="center"><b>Hint:</b> <span id="word"></span></span>
+                        <span class="right"><b>Timer: </b><span id="timer"></span> seconds</span>
+                    </h2>
+                </div>
+                <div class="connecting">
+                    Connecting...
+                </div>
+                <ul id="messageArea">
+                </ul>
+                <div id="formdiv">
+                    <form id="messageForm" name="messageForm">
+                        <div class="form-group">
+                            <div class="input-group clearfix">
+                                <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control" />
+                                <button type="submit" class="primary">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="guessForm" name="guessForm">
+                        <div class="form-group">
+                            <div class="input-group clearfix">
+                                <input type="text" id="guess" placeholder="Enter your guess..." autocomplete="off" class="form-control" />
+                                <button type="submit" class="primary">Guess</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
